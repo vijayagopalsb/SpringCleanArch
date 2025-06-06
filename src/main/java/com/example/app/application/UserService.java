@@ -83,4 +83,15 @@ public class UserService {
 		return userRepository.save(user);
 	}
 
+	//	public AppUser saveUser(AppUser user) {
+	//        return userRepository.save(user);
+	//    }
+	
+	// Update User with Photo
+	public AppUser updateUserPhoto(Long id, String photoPath) {
+		AppUser user = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
+		user.setPhotoPath(photoPath);
+		return userRepository.save(user);
+	}
+
 }

@@ -26,14 +26,17 @@ public class AppUser {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column(nullable = false)
 	@NotBlank
 	private String name;
-	
+
 	@Column(nullable = false, unique = true)
 	@Email
 	private String email;
+
+	@Column(name = "photo_path")
+	private String photoPath;
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -51,8 +54,6 @@ public class AppUser {
 	public AppUser() {
 		super();
 	}
-
-	
 
 	public AppUser(Long id, String name, String email, Set<Role> roles) {
 		super();
@@ -85,16 +86,23 @@ public class AppUser {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
 
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
 
+	public String getPhotoPath() {
+		return photoPath;
+	}
+
+	public void setPhotoPath(String photoPath) {
+		this.photoPath = photoPath;
+	}
+
 	@Override
 	public String toString() {
-		return "AppUser [id=" + id + ", name=" + name + ", email=" + email + ", roles=" + roles + "]";
+		return "AppUser [id=" + id + ", name=" + name + ", email=" + email + ", photoPath=" + photoPath + ", roles="
+				+ roles + "]";
 	}
 
 }
