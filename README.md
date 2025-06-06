@@ -16,16 +16,35 @@ SpringCleanArch applies **Clean Architecture**
 #### Project Structure
 
 ```bash
-springcleanarch/
-├── domain/
-│   ├── model/
-│   └── repository/
-├── application/
-│   ├── service/
-│   └── dto/
-├── infrastructure/
-│   ├── repository/
-│   └── controller/
-└── SpringCleanArchApplication.java
+SpringCleanArch/
+├── .mvn/                  # Maven wrapper files
+├── logs/                  # Application logs
+├── uploads/               # Directory for uploaded files (e.g., user photos)
+├── src/
+│   └── main/
+│       └── java/
+│           └── com/
+│               └── example/
+│                   └── app/
+│                       ├── api/                 # REST Controllers
+│                       │   ├── exceptions/      # Custom exceptions and handlers
+│                       │   └── UserController.java
+│                       ├── application/         # Business logic (Use Cases)
+│                       │   └── UserService.java
+│                       ├── domain/              # Core domain models and interfaces
+│                       │   ├── AppUser.java
+│                       │   ├── Role.java
+│                       │   ├── repository/      # Repository interfaces
+│                       │   │   ├── UserRepository.java
+│                       │   │   └── RoleRepository.java
+│                       ├── infrastructure/      # Implementations of interfaces
+│                       │   ├── JpaUserRepository.java
+│                       │   └── JpaRoleRepository.java
+│                       └── SpringCleanArchApplication.java  # Main application entry point
+├── .gitignore
+├── mvnw
+├── mvnw.cmd
+├── pom.xml                # Maven project configuration
+└── README.md
 ```
 
