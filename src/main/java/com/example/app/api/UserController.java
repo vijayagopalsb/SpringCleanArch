@@ -79,4 +79,12 @@ public class UserController {
 		String roleName = request.get("role");
 		return userService.assignRoleToUser(id, roleName);
 	}
+	
+	@PostMapping("/{id}/roles/bulk")
+	public AppUser assignRoles(@PathVariable Long id, @RequestBody Map<String, List<String>> request) {
+		
+		List<String> roleNames = request.get("roles");
+		return userService.assignRolesToUser(id, roleNames);
+		
+	}
 }

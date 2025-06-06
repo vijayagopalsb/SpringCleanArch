@@ -36,8 +36,8 @@ public class UserService {
 
 	public AppUser registerUser(String name, String email, Set<Role> roles) {
 		if (userRepository.findByEmail(email).isPresent()) {
-	        throw new DuplicateEmailException(email);
-	    }
+			throw new DuplicateEmailException(email);
+		}
 		logger.info("Registering user: {}", email);
 		AppUser user = new AppUser(null, name, email, roles);
 		return userRepository.save(user);
@@ -72,6 +72,15 @@ public class UserService {
 		user.addRole(role);
 		return userRepository.save(user);
 
+	}
+
+	public AppUser assignRolesToUser(Long userId, List<String> roleNames) {
+		AppUser user = userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException(userId));
+		for (String roleName : roleNames) {
+			Role role = roleRepository.findByName(roleName).orElseGet(() -> roleRepository.save(new Role(roleName)));
+			user.addRole(role);
+		}
+		return userRepository.save(user);
 	}
 
 }

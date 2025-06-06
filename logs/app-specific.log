@@ -1,0 +1,31 @@
+2025-06-06 14:13:00 INFO  com.example.app.DemoApplication - Starting DemoApplication using Java 17.0.10 with PID 52720 (D:\my_github_java_projects\SpringCleanArch\target\classes started by VIJAYAGOPAL S in D:\my_github_java_projects\SpringCleanArch)
+2025-06-06 14:13:00 INFO  com.example.app.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-06 14:13:03 INFO  com.example.app.DemoApplication - Started DemoApplication in 2.751 seconds (process running for 3.11)
+2025-06-06 14:13:09 INFO  com.example.app.api.UserController - Received request to create users with email: vijayagopal.s@gmail.com
+2025-06-06 14:13:09 INFO  c.e.app.application.UserService - Registering user: vijayagopal.s@gmail.com
+2025-06-06 14:13:12 INFO  com.example.app.api.UserController - Fetching user with id: 1
+2025-06-06 14:13:29 INFO  com.example.app.api.UserController - Received request to create users with email: vijayagopal.s@gmail.com
+2025-06-06 14:13:29 INFO  c.e.app.application.UserService - Registering user: vijayagopal.s@gmail.com
+2025-06-06 14:13:33 INFO  com.example.app.api.UserController - Fetching user with id: 1
+2025-06-06 14:13:51 INFO  com.example.app.api.UserController - Received request to create users with email: vijayagopal.s@gmail.com
+2025-06-06 14:53:17 INFO  com.example.app.api.UserController - Fetching user with id: 1
+2025-06-06 14:53:22 INFO  com.example.app.api.UserController - Received request to create users with email: vijayagopal.s@gmail.com
+2025-06-06 14:53:47 INFO  com.example.app.api.UserController - Received request to create users with email: vijayagopal.sb@gmail.com
+2025-06-06 14:53:47 INFO  c.e.app.application.UserService - Registering user: vijayagopal.sb@gmail.com
+2025-06-06 15:04:17 INFO  com.example.app.DemoApplication - Starting DemoApplication using Java 17.0.10 with PID 30884 (D:\my_github_java_projects\SpringCleanArch\target\classes started by VIJAYAGOPAL S in D:\my_github_java_projects\SpringCleanArch)
+2025-06-06 15:04:17 INFO  com.example.app.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-06 15:04:20 INFO  com.example.app.DemoApplication - Started DemoApplication in 2.851 seconds (process running for 3.2)
+2025-06-06 15:04:26 INFO  com.example.app.api.UserController - Received request to create users with email: vijayagopal.sb@gmail.com
+2025-06-06 15:04:26 INFO  c.e.app.application.UserService - Registering user: vijayagopal.sb@gmail.com
+2025-06-06 15:04:28 INFO  com.example.app.api.UserController - Received request to create users with email: vijayagopal.sb@gmail.com
+2025-06-06 15:04:31 INFO  com.example.app.api.UserController - Received request to create users with email: vijayagopal.sb@gmail.com
+2025-06-06 15:04:35 INFO  com.example.app.api.UserController - Fetching user with id: 1
+2025-06-06 15:04:55 INFO  com.example.app.api.UserController - Received request to create users with email: vijayagopal.sb@gmail.com
+2025-06-06 15:04:55 INFO  c.e.app.application.UserService - Registering user: vijayagopal.sb@gmail.com
+2025-06-06 15:50:00 INFO  com.example.app.DemoApplication - Starting DemoApplication using Java 17.0.10 with PID 31280 (D:\my_github_java_projects\SpringCleanArch\target\classes started by VIJAYAGOPAL S in D:\my_github_java_projects\SpringCleanArch)
+2025-06-06 15:50:00 INFO  com.example.app.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-06 15:50:02 INFO  com.example.app.DemoApplication - Started DemoApplication in 2.767 seconds (process running for 3.166)
+2025-06-06 15:50:11 INFO  com.example.app.api.UserController - Received request to create users with email: vijayagopal.sb@gmail.com
+2025-06-06 15:50:11 INFO  c.e.app.application.UserService - Registering user: vijayagopal.sb@gmail.com
+2025-06-06 15:50:13 INFO  com.example.app.api.UserController - Fetching user with id: 1
+2025-06-06 15:53:23 INFO  com.example.app.api.UserController - Fetching user with id: 1
