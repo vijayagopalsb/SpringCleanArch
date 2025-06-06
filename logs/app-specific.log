@@ -1,5 +1,12 @@
 
-2025-06-06 19:21:59 INFO  com.example.app.DemoApplication - Starting DemoApplication using Java 17.0.10 with PID 57712 (D:\my_github_java_projects\SpringCleanArch\target\classes started by VIJAYAGOPAL S in D:\my_github_java_projects\SpringCleanArch)
-2025-06-06 19:21:59 INFO  com.example.app.DemoApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-06 19:22:19 INFO  com.example.app.api.UserController - Received request to create users with email: vijayagopal.sb@gmail.com
-2025-06-06 19:25:46 INFO  com.example.app.api.UserController - Received request to create users with email: vijayagopal.sb@gmail.com
+2025-06-06 19:42:39 INFO  com.example.app.api.UserController - Received request to create users with email: vijayagopal.sb@gmail.com
+2025-06-06 19:42:39 INFO  c.e.app.application.UserService - Registering user: vijayagopal.sb@gmail.com
+2025-06-06 19:47:05 INFO  com.example.app.DemoApplication - Starting DemoApplication using Java 17.0.10 with PID 58180 (D:\my_github_java_projects\SpringCleanArch\target\classes started by VIJAYAGOPAL S in D:\my_github_java_projects\SpringCleanArch)
+2025-06-06 19:47:05 INFO  com.example.app.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-06 19:47:07 INFO  com.example.app.DemoApplication - Started DemoApplication in 2.68 seconds (process running for 3.013)
+2025-06-06 19:47:20 INFO  com.example.app.api.UserController - Received request to create users with email: vijayagopal.sb@gmail.com
+2025-06-06 19:47:20 INFO  c.e.app.application.UserService - Registering user: vijayagopal.sb@gmail.com
+2025-06-06 19:50:49 INFO  com.example.app.api.UserController - Received request to fetch photo: 1_1749219448751_Vijay.jpg
+2025-06-06 19:50:49 INFO  com.example.app.api.UserController - --- Looking for photo at: D:\my_github_java_projects\SpringCleanArch\uploads\1_1749219448751_Vijay.jpg
+2025-06-06 19:51:07 INFO  com.example.app.api.UserController - Received request to fetch photo: 1_1749219448751_Vijay.jpg
+2025-06-06 19:51:07 INFO  com.example.app.api.UserController - --- Looking for photo at: D:\my_github_java_projects\SpringCleanArch\uploads\1_1749219448751_Vijay.jpg

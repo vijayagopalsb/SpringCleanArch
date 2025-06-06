@@ -125,6 +125,8 @@ public class UserController {
 
 	@GetMapping("/photos/{filename:.+}") // allows for extensions (like .jpg, .png)
 	public ResponseEntity<Resource> getPhoto(@PathVariable String filename) {
+		
+		logger.info("Received request to fetch photo: {}", filename);
 
 		try {
 			String uploadDir = System.getProperty("user.dir") + "/uploads/";
@@ -147,6 +149,7 @@ public class UserController {
 			return ResponseEntity.ok().contentType(MediaType.parseMediaType(contentType)).body(resource);
 
 		} catch (Exception exception) {
+			logger.error("Error serving photo {}: {}", filename, exception.getMessage());
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}
 	
