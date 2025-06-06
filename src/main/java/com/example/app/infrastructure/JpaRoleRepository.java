@@ -8,7 +8,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Repository;
 
 import com.example.app.domain.Role;
-import com.example.app.domain.RoleRepository;
+import com.example.app.domain.repository.RoleRepository;
 
 @Repository
 public class JpaRoleRepository implements RoleRepository {

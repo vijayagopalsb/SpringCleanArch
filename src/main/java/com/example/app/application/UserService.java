@@ -14,8 +14,8 @@ import com.example.app.api.exceptions.DuplicateEmailException;
 import com.example.app.api.exceptions.UserNotFoundException;
 import com.example.app.domain.AppUser;
 import com.example.app.domain.Role;
-import com.example.app.domain.RoleRepository;
-import com.example.app.domain.UserRepository;
+import com.example.app.domain.repository.RoleRepository;
+import com.example.app.domain.repository.UserRepository;
 
 // Integrating logger
 import org.slf4j.Logger;

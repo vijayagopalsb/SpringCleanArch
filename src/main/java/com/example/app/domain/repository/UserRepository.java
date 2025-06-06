@@ -2,10 +2,12 @@
 // UserRepository.java interface
 // domain/UserRepository.java
 
-package com.example.app.domain;
+package com.example.app.domain.repository;
 
 import java.util.List;
 import java.util.Optional;
+
+import com.example.app.domain.AppUser;
 
 public interface UserRepository {
 	

@@ -9,7 +9,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Repository;
 
 import com.example.app.domain.AppUser;
-import com.example.app.domain.UserRepository;
+import com.example.app.domain.repository.UserRepository;
 
 @Repository
 public class JpaUserRepository implements UserRepository {
