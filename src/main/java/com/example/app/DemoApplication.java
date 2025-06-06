@@ -8,7 +8,7 @@ import static java.lang.System.out;
 public class DemoApplication {
 
 	public static void main(String[] args) {
-		out.println ("Starting application...");
+		
 		SpringApplication.run(DemoApplication.class, args);
 		
 		
