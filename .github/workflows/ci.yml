@@ -22,3 +22,20 @@ jobs:
 
       - name: Run Tests
         run: mvn test
+		
+	  - name: Cache Maven packages
+		uses: actions/cache@v4
+		with:
+		  path: ~/.m2/repository
+		  key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+		  restore-keys: |
+		    ${{ runner.os }}-maven-
+	
+	  - name: Publish Test Report
+		if: always()
+		uses: actions/upload-artifact@v4
+		with:
+		  name: test-results
+		  path: target/surefire-reports/
+
+
