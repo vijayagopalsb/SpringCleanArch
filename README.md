@@ -1,5 +1,22 @@
 ## SpringCleanArch
 
+
+[![Build Status](https://github.com/vijayagopalsb/SpringCleanArch/actions/workflows/ci.yml/badge.svg)](https://github.com/vijayagopalsb/SpringCleanArch/actions)
+![Java](https://img.shields.io/badge/Java-17+-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+
+SpringCleanArch is a demonstration project showing how to implement Clean Architecture principles using Java and Spring Boot.  
+It provides a RESTful API for managing users and roles, supports file (photo) uploads, and features robust error handling and logging.
+
+**Key Features:**
+- User registration, update, delete, and fetch
+- Assign single or multiple roles to users
+- Prevent duplicate entries (unique email constraint)
+- Upload and serve user profile photos
+- Clean and robust error handling
+- Extensible, maintainable, and testable structure
+
 ###  Clean Architecture Compliance
 
 SpringCleanArch applies **Clean Architecture**
@@ -80,4 +97,46 @@ To make the project even more impressive:
     - Include sample API requests/responses.
 - **DTO Layer**: Add DTOs to decouple API and domain models.
 - **Validation**: Use `@Valid` for request body validation.
+
+#### API Endpoints
+
+- `POST   /users`           — Create a new user
+- `GET    /users/{id}`      — Get user by ID
+- `PUT    /users/{id}`      — Update user details
+- `DELETE /users/{id}`      — Delete user
+- `POST   /users/{id}/roles`      — Assign a role to user
+- `POST   /users/{id}/roles/bulk` — Assign multiple roles to user
+- `POST   /users/{id}/photo`      — Upload user photo
+- `GET    /users/photos/{filename}` — Get user photo by filename
+
+#### Clean Architecture Explained
+
+**Clean Architecture**
+
+This project follows Clean Architecture principles, which emphasize the separation of concerns and independence of business logic from frameworks or external systems.
+
+
+<p align="center">
+  <img src="assets/clean-architecture.png" alt="Clean Architecture Diagram" width="400" height="400"/>
+</p>
+
+**Layers**
+
+- Domain Layer: Core business logic. Contains entity classes (e.g., AppUser, Role) and repository interfaces (UserRepository, RoleRepository).
+No dependencies on Spring or infrastructure code.
+
+
+- Application Layer: Implements use cases and orchestrates business rules (UserService). Uses only interfaces from the Domain layer.
+
+
+- API Layer: Contains Spring REST controllers (UserController) and exception handlers. Handles HTTP requests/responses and delegates business logic to the Application layer.
+
+
+- Infrastructure Layer: Provides technical implementations such as database access (JpaUserRepository, JpaRoleRepository), file storage, etc.
+
+
+**Dependency Direction:**
+- All dependencies point inward. The innermost layer (Domain) is independent of any frameworks or external tools.
+
+
 
