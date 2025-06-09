@@ -10,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import com.example.app.constants.ApiConstants;
+
 import jakarta.servlet.http.HttpServletRequest;
 
 @ControllerAdvice
@@ -19,13 +21,12 @@ public class ApiExceptionHandler {
 	@ExceptionHandler(UserNotFoundException.class)
 	public ResponseEntity<Object> handleUserNotFound(UserNotFoundException ex, HttpServletRequest request) {
 		Map<String, Object> body = new HashMap<>();
-		body.put("timestamp", ZonedDateTime.now());
-		body.put("status", HttpStatus.NOT_FOUND.value());
-		body.put("error", "Not Found");
-		body.put("message", ex.getMessage());
-		body.put("path", request.getRequestURI());
-		// Optionally, add more fields, e.g., "path"
-		return new ResponseEntity<Object>(body, HttpStatus.NOT_FOUND);
+		body.put(ApiConstants.TIMESTAMP, ZonedDateTime.now());
+		body.put(ApiConstants.STATUS, HttpStatus.NOT_FOUND.value());
+		body.put(ApiConstants.ERROR, "Not Found");
+		body.put(ApiConstants.MESSAGE, ex.getMessage());
+		body.put(ApiConstants.PATH, request.getRequestURI());
+		return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
 	}
 
 	// 2. Custom Duplicate Email Exception - More Specific
@@ -34,11 +35,11 @@ public class ApiExceptionHandler {
 			HttpServletRequest request) {
 
 		Map<String, Object> body = new HashMap<>();
-		body.put("timestamp", ZonedDateTime.now());
-		body.put("status", 409);
-		body.put("error", "Conflict");
-		body.put("message", duplicateEmailException.getMessage());
-		body.put("path", request.getRequestURI());
+		body.put(ApiConstants.TIMESTAMP, ZonedDateTime.now());
+		body.put(ApiConstants.STATUS, 409);
+		body.put(ApiConstants.ERROR, "Conflict");
+		body.put(ApiConstants.MESSAGE, duplicateEmailException.getMessage());
+		body.put(ApiConstants.PATH, request.getRequestURI());
 		return new ResponseEntity<>(body, HttpStatus.CONFLICT);
 
 	}
@@ -60,11 +61,11 @@ public class ApiExceptionHandler {
 	// --- Utility Method for Response Construction ---
 	private ResponseEntity<Map<String, Object>> buildResponse(int status, String error, String message, String path) {
 		Map<String, Object> body = new HashMap<>();
-		body.put("timestamp", ZonedDateTime.now());
-		body.put("status", status);
-		body.put("error", error);
-		body.put("message", message);
-		body.put("path", path);
+		body.put(ApiConstants.TIMESTAMP, ZonedDateTime.now());
+		body.put(ApiConstants.STATUS, status);
+		body.put( ApiConstants.ERROR, error);
+		body.put(ApiConstants.MESSAGE, message);
+		body.put(ApiConstants.PATH, path);
 		return new ResponseEntity<>(body, HttpStatus.valueOf(status));
 	}
 

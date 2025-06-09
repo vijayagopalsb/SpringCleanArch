@@ -83,9 +83,6 @@ public class UserService {
 		return userRepository.save(user);
 	}
 
-	//	public AppUser saveUser(AppUser user) {
-	//        return userRepository.save(user);
-	//    }
 	
 	// Update User with Photo
 	public AppUser updateUserPhoto(Long id, String photoPath) {

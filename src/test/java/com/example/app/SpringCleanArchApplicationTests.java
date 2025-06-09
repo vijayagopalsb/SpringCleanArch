@@ -8,6 +8,7 @@ class SpringCleanArchApplicationTests {
 
 	@Test
 	void contextLoads() {
+		// This test is intentionally empty to verify the application context loads successfully.
 	}
 
 }

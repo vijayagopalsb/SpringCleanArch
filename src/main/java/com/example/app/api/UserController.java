@@ -58,10 +58,6 @@ public class UserController {
 	@GetMapping("/{id}")
 	public AppUser getUser(@PathVariable Long id) {
 		logger.info("Fetching user with id: {}", id);
-		// return userService.getUserById(id).orElseThrow(() -> new
-		// RuntimeException("User not Found!"));
-		// return userService.getUserById(id).orElseThrow(() -> new
-		// ResponseStatusException(HttpStatus.NOT_FOUND, "User not Found"));
 		return userService.getUserById(id).orElseThrow(() -> new UserNotFoundException(id));
 	}
 
@@ -102,7 +98,7 @@ public class UserController {
 	}
 
 	@PostMapping("/{id}/photo")
-	public ResponseEntity<?> uploadPhoto(@PathVariable Long id, @RequestParam("file") MultipartFile file) {
+	public ResponseEntity<Map<String, String>> uploadPhoto(@PathVariable Long id, @RequestParam("file") MultipartFile file) {
 		String uploadDir = "uploads/";
 		String fileName = id + "_" + System.currentTimeMillis() + "_" + file.getOriginalFilename();
 		Path filePath = Paths.get(uploadDir, fileName);
@@ -114,26 +110,25 @@ public class UserController {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Map.of("error", "Photo upload failed"));
 		}
 
-		// AppUser user = userService.getUserById(id).orElseThrow(() -> new
-		// UserNotFoundException(id));
-		// user.setPhotoPath(filePath.toString());
-		userService.updateUserPhoto(id, fileName.toString());
+		userService.updateUserPhoto(id, fileName);
 
 		// Return the file name/path as response
-		return ResponseEntity.ok(Map.of("message", "Photo uploaded successfully", "photoPath", fileName.toString()));
+		return ResponseEntity.ok(Map.of("message", "Photo uploaded successfully", "photoPath", fileName));
 	}
 
 	@GetMapping("/photos/{filename:.+}") // allows for extensions (like .jpg, .png)
 	public ResponseEntity<Resource> getPhoto(@PathVariable String filename) {
-		
+
 		logger.info("Received request to fetch photo: {}", filename);
 
 		try {
 			String uploadDir = System.getProperty("user.dir") + "/uploads/";
 			Path filePath = Paths.get(uploadDir, filename).normalize();
-			
-			logger.info("--- Looking for photo at: {}", filePath.toString());
-			
+
+			if (logger.isInfoEnabled()) {
+				logger.info("Looking for photo at: {}", filePath);
+			}
+
 			Resource resource = new UrlResource(filePath.toUri());
 
 			if (!resource.exists()) {
@@ -152,6 +147,6 @@ public class UserController {
 			logger.error("Error serving photo {}: {}", filename, exception.getMessage());
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}
-	
+
 	}
 }

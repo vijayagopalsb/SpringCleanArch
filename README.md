@@ -3,6 +3,7 @@
 
 [![Build Status](https://github.com/vijayagopalsb/SpringCleanArch/actions/workflows/ci.yml/badge.svg)](https://github.com/vijayagopalsb/SpringCleanArch/actions)
 ![Java](https://img.shields.io/badge/Java-17+-blue)
+[![SonarCloud Status](https://sonarcloud.io/api/project_badges/measure?project=vijayagopalsb_CleanArchitecture&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=vijayagopalsb_CleanArchitecture)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
