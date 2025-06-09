@@ -27,9 +27,9 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           projectBaseDir: .
-		  args: >
-		    -Dsonar.projectKey=vijayagopalsb_SpringCleanArch 
-		    -Dsonar.organization=vijayagopalsb
+          args: >
+            -Dsonar.projectKey=vijayagopalsb_SpringCleanArch
+            -Dsonar.organization=vijayagopalsb
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: "https://sonarcloud.io"
