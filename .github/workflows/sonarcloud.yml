@@ -23,13 +23,13 @@ jobs:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v2
-        with:
-          projectBaseDir: .
-          args: >
-            -Dsonar.projectKey=vijayagopalsb_SpringCleanArch
-            -Dsonar.organization=vijayagopalsb
+		  
+      - name: Build and analyze on SonarCloud
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: "https://sonarcloud.io"
+		run: |
+		  mvn -B clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+		    -Dsonar.projectKey=vijayagopalsb_SpringCleanArch \
+		    -Dsonar.organization=vijayagopalsb \
+		    -Dsonar.host.url=https://sonarcloud.io \
+		    -Dsonar.login=${SONAR_TOKEN}
