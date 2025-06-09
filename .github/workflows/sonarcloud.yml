@@ -31,5 +31,5 @@ jobs:
 		    -Dsonar.projectKey=vijayagopalsb_SpringCleanArch 
 		    -Dsonar.organization=vijayagopalsb
         env:
-          SONAR_TOKEN: a44065e360f236b460e5b6243ad7040d174ebe02
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: "https://sonarcloud.io"
