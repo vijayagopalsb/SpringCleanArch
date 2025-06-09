@@ -28,7 +28,7 @@ jobs:
         with:
           projectBaseDir: .
 		  args: >
-		    -Dsonar.projectKey=vijayagopalsb_SpringCleanArch
+		    -Dsonar.projectKey=vijayagopalsb_SpringCleanArch 
 		    -Dsonar.organization=vijayagopalsb
         env:
           SONAR_TOKEN: a44065e360f236b460e5b6243ad7040d174ebe02
